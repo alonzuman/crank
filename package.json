@@ -2,7 +2,8 @@
   "name": "crank",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "5.1.1"
+    "@rails/webpacker": "5.1.1",
+    "bootstrap": "^4.4.1"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.10.3"
