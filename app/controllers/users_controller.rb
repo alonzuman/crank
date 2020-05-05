@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def dashboard
+    @user = current_user
+  end
+
   def show
     @user = User.find(params[:id])
   end
@@ -6,14 +10,12 @@ class UsersController < ApplicationController
   def follow
     @user = User.find(params[:id])
     @follow = Follow.create(follower_id: current_user.id, followed_user_id: params[:id])
-    raise
+    @follow.save
   end
 
   def unfollow
+    @unfollow = @user.followers.where(id: current_user.id)
+    @unfollow.destroy
+    # TODO
   end
 end
-
-
-# // app/views/restaurants/destroy.js.erb
-# document.querySelector("[data-restaurant-id='<%= @restaurant.id %>']")
-#   .remove();

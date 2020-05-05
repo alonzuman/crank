@@ -15,4 +15,18 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-console.log('Hello World from Webpacker')
+const followButton = document.querySelector('.btn');
+const followersCount = document.getElementById('followers-count');
+
+followButton.addEventListener('click', () => {
+  console.log(followButton.classList.value)
+  if (followButton.classList.value === 'btn btn-primary') {
+    followersCount.innerText ++ ;
+    followButton.classList = 'btn btn-secondary';
+    followButton.innerText = 'Unfollow';
+  } else {
+    followersCount.innerText -- ;
+    followButton.classList = 'btn btn-primary';
+    followButton.innerText = 'Follow';
+  }
+});

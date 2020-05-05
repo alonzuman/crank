@@ -1,0 +1,9 @@
+<%= image_tag  "https://kitt.lewagon.com/placeholder/users/ssaunier", class:'avatar big' %>
+<h2><%= @user.full_name %></h2>
+<p><%= @user.bio %></p>
+<p>Followers</p>
+<p id='followers-count'><%= @user.followers.count %></p>
+<p>Following</p>
+<p id='following-count'><%= @user.followings.count %></p>
+
+<%= link_to 'Edit Profile', edit_user_registration_path, class:'btn btn-primary'%>
