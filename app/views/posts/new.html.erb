@@ -1,5 +1,8 @@
-<h1>Add your post</h1>
-<%= simple_form_for(@post) do |f| %>
-  <%= f.input :description %>
-  <%= f.submit 'Submit', class:'btn btn-primary' %>
-<% end %>
+<div class="container">
+  <h1>Add your post</h1>
+  <%= simple_form_for(@post) do |f| %>
+    <%= f.input :description, required: true %>
+    <%= f.input :video, as: :file %>
+    <%= f.submit 'Submit', class:'btn btn-primary' %>
+  <% end %>
+</div>

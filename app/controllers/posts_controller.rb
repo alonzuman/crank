@@ -1,4 +1,8 @@
 class PostsController < ApplicationController
+  def index
+    @posts = Post.all
+  end
+
   def show
     @post = Post.find(params[:id])
   end
@@ -17,6 +21,6 @@ class PostsController < ApplicationController
   private
 
   def set_params
-    params.require(:post).permit(:description) #TODO add the video as well
+    params.require(:post).permit(:description, :video) #TODO add the video as well
   end
 end

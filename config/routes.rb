@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
+  root to: 'posts#index'
   get '/me', to: 'users#dashboard', as: 'me'
   resources :posts
   get '/users/:id', to: 'users#show', as: 'users' # TODO make it auto redirect to '/me' when :id == current_user[:id]

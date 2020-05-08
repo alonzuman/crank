@@ -1,0 +1,5 @@
+<div class="post-card">
+  <%= link_to post_path(post) do %>
+    <%= cl_video_tag(post.video.key, height: '100%', width: '100%') %>
+  <% end %>
+</div>

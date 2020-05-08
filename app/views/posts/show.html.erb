@@ -1,3 +1,5 @@
-<h1>post id <%= @post.id %> </h1>
-<h1>post descripiton <%= @post.description %> </h1>
+<%= cl_video_tag(@post.video.key, height: '100%', controls: true, width: '100%')%>
+<div class="container">
+<p>post descripiton <%= @post.description %> </p>
+</div>
 <%# This is the nwe one %>

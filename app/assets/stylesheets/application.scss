@@ -2,6 +2,15 @@
   box-sizing: border-box;
 }
 
+h4 {
+  margin: 0px!important;
+}
+
+.container {
+  margin-top: 60px;
+  margin-bottom: 80px;
+}
+
 body {
   background-color: black!important;
   color: white!important;
@@ -9,6 +18,7 @@ body {
 
 a {
   color: white!important;
+  margin-bottom: 5px;
 }
 
 a:hover {

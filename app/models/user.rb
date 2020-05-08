@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  # POSTS
+  has_many :posts
+  
   # FOLLOWS
   # To view a users followers, call user.followers 
   # To view users followed by user, call user.followings

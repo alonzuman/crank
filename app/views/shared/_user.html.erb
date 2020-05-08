@@ -1,3 +1,5 @@
+<%= render  "shared/top-bar", user: user %>
+
 <div class="container text-center">
   <%= image_tag  "https://kitt.lewagon.com/placeholder/users/ssaunier", class:'avatar big' %>
   <h2><%= user.full_name %></h2>
@@ -7,14 +9,30 @@
   <p>Following</p>
   <p id='following-count'><%= user.followings.count %></p>
 
+  <%# Follow / unfollow %>
+
   <% if user == current_user %>
-    <%= link_to 'Edit Profile', edit_user_registration_path, class:'btn btn-primary'%>
-    <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+    <div>
+      <%= link_to 'Edit Profile', edit_user_registration_path, class:'btn btn-primary'%>
+    </div>
+    <div>
+      <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class:"btn btn-secondary"%>
+    </div>
   <% else %>
     <% if @user.followers.include?(current_user) %>
       <%= link_to "Unfollow", unfollow_path, class:'btn btn-secondary'%> 
     <% else %>
       <%= link_to "Follow", follow_path, class:'btn btn-primary' %> 
     <% end %>
+  <% end %>
+
+  <%# My posts grid %>
+  <% if !user.posts.nil? %>
+  <h3>My posts</h3>
+  <div class="posts-grid">
+    <% user.posts.reverse.each do |post| %>
+      <%= render  "shared/post-thumbnail", post: post %>
+    <% end %>
+  </div>
   <% end %>
 </div>
