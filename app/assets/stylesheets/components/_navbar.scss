@@ -1,4 +1,9 @@
 .navbar {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: $dark-background;
+  color: white;
   display: flex;
   justify-content: space-between;
 }

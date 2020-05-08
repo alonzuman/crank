@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @follow = Follow.create(follower_id: current_user.id, followed_user_id: params[:id])
     @follow.save
-    redirect_to users_path(params[:id]) #Re-render not redirectttt
+    redirect_to users_path(params[:id])
   end
 
   def unfollow  

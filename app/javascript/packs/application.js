@@ -14,17 +14,3 @@
 // 
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
-
-// const followersCount = document.getElementById('followers-count');
-// const follow = document.getElementById('follow');
-// const unFollow = document.getElementById('unfollow');
-// console.log(follow);
-// console.log(unFollow);
-
-// follow.addEventListener('click', () => {
-//   followersCount.innerText ++ ;
-// });
-
-// unFollow.addEventListener('click', () => {
-//   followersCount.innerText -- ;
-// })

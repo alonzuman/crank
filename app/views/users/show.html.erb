@@ -1,20 +1,2 @@
-<h1><%= @user.email %></h1>
-<h1><%= @user.full_name %></h1>
-<h1><%= @user.bio %></h1>
-<p>Followers</p>
-<p id='followers-count'><%= @user.followers.count %></p>
-<p>Following</p>
-<p id='following-count'><%= @user.followings.count %></p>
+<%= render  "shared/user", user: @user %>
 
-<% if !@user.followers.include?(current_user) %>
-  <%= link_to "Follow", follow_path, class:'btn btn-primary', id:'follow' %>  
-<% else %>
-  <%= link_to "Unfollow", unfollow_path, class:'btn btn-secondary', id:'unfollow'%>   
-<% end %>
-
-<%# Render both buttons show/hidden %>
-<%# Toggle between the 'hidden' class on click %>
-<%# data-follow-@user.id %>
-
-<%# <a href="" data-follow-user='23' class='hidden'>Follow </a>
-<a href="" data-unfollow-user='23' > Unfollow </a> %>

@@ -8,13 +8,15 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(set_params)
+    @post = Post.create(set_params)
     @post.user = current_user
-    @post.save
+    @post.save 
     redirect_to post_path(@post)
   end
 
+  private
+
   def set_params
-    params.require(:post).permit(:description)
+    params.require(:post).permit(:description) #TODO add the video as well
   end
 end
