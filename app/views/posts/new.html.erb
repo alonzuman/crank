@@ -1,6 +1,5 @@
-<h1> hi im the new post page </h1>
-
+<h1>Add your post</h1>
 <%= simple_form_for(@post) do |f| %>
   <%= f.input :description %>
-  <%= f.submit class:'btn btn-primary'%>
+  <%= f.submit 'Submit', class:'btn btn-primary' %>
 <% end %>
