@@ -1,0 +1,20 @@
+<div class="container text-center">
+  <%= image_tag  "https://kitt.lewagon.com/placeholder/users/ssaunier", class:'avatar big' %>
+  <h2><%= user.full_name %></h2>
+  <p><%= user.bio %></p>
+  <p>Followers</p>
+  <p id='followers-count'><%= user.followers.count %></p>
+  <p>Following</p>
+  <p id='following-count'><%= user.followings.count %></p>
+
+  <% if user == current_user %>
+    <%= link_to 'Edit Profile', edit_user_registration_path, class:'btn btn-primary'%>
+    <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+  <% else %>
+    <% if @user.followers.include?(current_user) %>
+      <%= link_to "Unfollow", unfollow_path, class:'btn btn-secondary'%> 
+    <% else %>
+      <%= link_to "Follow", follow_path, class:'btn btn-primary' %> 
+    <% end %>
+  <% end %>
+</div>
