@@ -2,10 +2,14 @@
   position: fixed;
   width: 100%;
   bottom: 0;
-  background-color: $dark-background;
+  background-color: $dark-background; 
   color: white;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   z-index: 999;
   border-top: solid 1px #474747;
+}
+
+.padded {
+  padding: 4px 24px;
 }

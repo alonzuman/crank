@@ -1,8 +1,9 @@
 <div class="container">
-  <h1>Add your post</h1>
+  <h1>Add a crank</h1>
+  <p>Post your own crank and challenge others!</p>
   <%= simple_form_for(@post) do |f| %>
-    <%= f.input :description, required: true %>
     <%= f.input :video, as: :file %>
-    <%= f.submit 'Submit', class:'btn btn-primary' %>
+    <%= f.input :description, required: true %>
+    <%= f.submit 'Post', class:'btn btn-primary' %>
   <% end %>
 </div>

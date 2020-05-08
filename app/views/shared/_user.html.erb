@@ -1,22 +1,26 @@
 <%= render  "shared/top-bar", user: user %>
 
 <div class="container text-center">
-  <%= image_tag  "https://kitt.lewagon.com/placeholder/users/ssaunier", class:'avatar big' %>
-  <h2><%= user.full_name %></h2>
+  <%= cl_image_tag(user.image.key, class:'avatar big') %>
+  <br>
+  <h3><%= user.full_name %></h3>
   <p><%= user.bio %></p>
-  <p>Followers</p>
-  <p id='followers-count'><%= user.followers.count %></p>
-  <p>Following</p>
-  <p id='following-count'><%= user.followings.count %></p>
+  <div class="follows-container">
+    <div>
+      <p>Cranks</p>
+      <p id='followers-count'><%= user.posts.count %></p>
+    </div>
+    <div>
+      <p>Followers</p>
+      <p id='following-count'><%= user.followers.count %></p>
+    </div>
+  </div>
 
   <%# Follow / unfollow %>
 
   <% if user == current_user %>
     <div>
-      <%= link_to 'Edit Profile', edit_user_registration_path, class:'btn btn-primary'%>
-    </div>
-    <div>
-      <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class:"btn btn-secondary"%>
+      <%= link_to 'Edit', edit_user_registration_path, class:'btn btn-secondary small'%>
     </div>
   <% else %>
     <% if @user.followers.include?(current_user) %>

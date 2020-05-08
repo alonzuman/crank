@@ -1,13 +1,15 @@
 <div class='navbar'>
   <% if user_signed_in? %>
     <div class='nav-element'>
-      <%= link_to 'Home', root_path %>
+      <%= link_to '', root_path, class:'fas fa-compass' %>
     </div>
     <div class='nav-element'>
-      <%= link_to 'Add Post', new_post_path %>
+      <%= link_to  new_post_path, class:'btn btn-primary padded' do %>
+        <i class="fas fa-plus"></i>
+      <% end %>
     </div>
     <div class='nav-element'>
-      <%= link_to 'My Profile', me_path %>
+      <%= link_to '', me_path , class:'fas fa-user-circle' %>
     </div>
   <% else %>
     <div class='nav-element'>

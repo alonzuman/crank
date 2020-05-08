@@ -6,7 +6,9 @@ class User < ApplicationRecord
 
   # POSTS
   has_many :posts
-  
+
+  has_one_attached :image
+
   # FOLLOWS
   # To view a users followers, call user.followers 
   # To view users followed by user, call user.followings

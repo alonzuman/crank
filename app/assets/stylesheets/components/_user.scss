@@ -3,3 +3,12 @@
   grid-template-columns: 1fr 1fr;
   gap: 16px;
 }
+
+.follows-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.small {
+  width: 120px;
+}
