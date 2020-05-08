@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
   def unfollow  
     @follow_to_remove = Follow.where(follower_id: current_user, followed_user_id: params[:id])
-    @follow_to_remove[0].destroy
+    @follow_to_remove.destroy_all
     redirect_to users_path(params[:id])
   end
 end
