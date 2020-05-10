@@ -1,7 +1,10 @@
 <div class='navbar'>
   <% if user_signed_in? %>
     <div class='nav-element'>
-      <%= link_to '', root_path, class:'fas fa-compass' %>
+      <%= link_to '', root_path, class:'fas fa-search' %>
+    </div>
+    <div class='nav-element'>
+      <%= link_to '', discover_path, class:'fas fa-compass' %>
     </div>
     <div class='nav-element'>
       <%= link_to  new_post_path, class:'btn btn-primary padded' do %>

@@ -3,6 +3,8 @@
 <div class="container text-center">
   <% if user.image.attached? %>
     <%= cl_image_tag(user.image.key, class:'avatar big') %>
+  <% else %>
+    <%= image_tag('default-avatar', class:'avatar big') %>
   <% end %>
   <br>
   <h3><%= user.full_name %></h3>

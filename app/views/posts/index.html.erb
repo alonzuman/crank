@@ -2,6 +2,6 @@
 
 <div class="container"> 
   <% @posts.each do |post| %>
-    <%= cl_video_tag(post.video.key, height: '100%', controls: true, width: '100%') %>
+    <%= render  "shared/post-card", post: post %>
   <% end %>
 </div>

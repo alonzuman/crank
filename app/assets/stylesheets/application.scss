@@ -32,7 +32,7 @@ body {
 a {
   color: white!important;
   margin-bottom: 5px;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 a:hover {
@@ -60,12 +60,13 @@ h4 {
 }
 
 p {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .container {
   margin-top: 60px;
   margin-bottom: 80px;
+  max-width: 500px!important;
 }
 
 .btn {
@@ -73,7 +74,7 @@ p {
   width: 100%;
   margin-top: 5px;
   max-width: 500px;
-  font-size: 12px!important;
+  font-size: 14px!important;
 }
 
 .btn-secondary {
@@ -101,4 +102,12 @@ p {
 textarea {
   width: 100%;
   resize: none;
+}
+
+.fas {
+  font-size: 22px;
+}
+
+.fa {
+  font-size: 22px;
 }
