@@ -1,6 +1,6 @@
+<%= render  "shared/top-bar-logo" %>
 <div class='container'>
-  <%= @posts.each do |post| %>
-  <h1> discover page </h1>
-  <h3> #cooking </h3>
+  <% @posts.each do |post| %>
+  <%= render  "shared/post-card", post: post %>
   <% end %>
 </div>

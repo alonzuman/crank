@@ -7,6 +7,12 @@ class User < ApplicationRecord
   # POSTS
   has_many :posts
 
+  # LIKES
+  has_many :likes, dependent: :destroy
+
+  # SAVES
+  has_many :saves
+
   has_one_attached :image
 
   # FOLLOWS

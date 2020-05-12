@@ -1,25 +1,28 @@
 <div class='navbar'>
   <% if user_signed_in? %>
-    <div class='nav-element'>
-      <%= link_to '', root_path, class:'fas fa-search' %>
-    </div>
-    <div class='nav-element'>
-      <%= link_to '', discover_path, class:'fas fa-compass' %>
-    </div>
-    <div class='nav-element'>
-      <%= link_to  new_post_path, class:'btn btn-primary padded' do %>
-        <i class="fas fa-plus"></i>
-      <% end %>
-    </div>
-    <div class='nav-element'>
-      <%= link_to '', me_path , class:'fas fa-user-circle' %>
-    </div>
+  <div class='nav-element'>
+    <%= link_to '', root_path, class:'fas fa-search' %>
+  </div>
+  <div class='nav-element'>
+    <%= link_to '', discover_path, class:'fas fa-compass' %>
+  </div>
+  <div class='nav-element'>
+    <%= link_to  new_post_path, class:'btn btn-primary padded' do %>
+    <i class="fas fa-plus"></i>
+    <% end %>
+  </div>
+  <div class='nav-element'>
+    <i class="fas fa-heart"></i>
+  </div>
+  <div class='nav-element'>
+    <%= link_to '', me_path , class:'fas fa-user-circle' %>
+  </div>
   <% else %>
-    <div class='nav-element'>
-      <%= link_to 'Sign up', new_user_registration_path %>
-    </div>
-    <div class='nav-element'>
-      <%= link_to 'Sign in', new_user_session_path %>
-    </div>
+  <div class='nav-element'>
+    <%= link_to 'Sign up', new_user_registration_path %>
+  </div>
+  <div class='nav-element'>
+    <%= link_to 'Sign in', new_user_session_path %>
+  </div>
   <% end %>
 </div>

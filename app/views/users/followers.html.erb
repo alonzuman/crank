@@ -1,0 +1,9 @@
+<%= render  "shared/top-bar", center: @user.full_name, left: (link_to 'Back', users_path(@user)) %>
+
+<div class="container">
+  <% @followers.each do |follower| %>
+  <%= link_to users_path(follower) do %>
+  <%= render  "shared/user-card-small", user: follower %>
+  <% end %>
+  <% end %>
+</div>
