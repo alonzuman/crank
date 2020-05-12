@@ -1,5 +1,15 @@
+<% left = left || ''%>
+<% right = right || ''%>
+<% center = center || 'Crank'%>
+
 <div class="top-bar-container">
-  <h4></h4>
-  <h4><%= user.full_name %></h4>
-  <h4></h4>
+  <div class='top-bar-element'>
+    <%= left %>
+  </div>
+  <div class='top-bar-element'>
+    <h3><%= center %></h3>
+  </div>
+  <div>
+    <%= right %>
+  </div>
 </div>

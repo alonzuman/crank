@@ -7,7 +7,7 @@ p 'running seed...'
 
 
 
-10.times do 
+3.times do 
   # User.create!(email: Faker::Internet.email, password: '123456', full_name: Faker::Name.name)
   # @user = User.last
   # Post.create!(description: , video:  )

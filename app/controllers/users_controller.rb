@@ -19,4 +19,9 @@ class UsersController < ApplicationController
     @follow_to_remove.destroy_all
     redirect_to users_path(params[:id])
   end
+
+  def followers
+    @user = User.find(params[:id])
+    @followers = @user.followers
+  end
 end
