@@ -21,6 +21,6 @@ class PostsController < ApplicationController
   private
 
   def set_params
-    params.require(:post).permit(:description, :video) #TODO add the video as well
+    params.require(:post).permit(:description, :video, category_list: []) #TODO add the video as well
   end
 end

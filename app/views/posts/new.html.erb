@@ -4,6 +4,7 @@
   <%= simple_form_for(@post) do |f| %>
     <%= f.input :video, as: :file %>
     <%= f.input :description, required: true %>
+    <%= f.input :category_list, as: :check_boxes, collection: ["music" , "food"] %>
     <%= f.submit 'Post', class:'btn btn-primary' %>
-  <% end %>
+    <% end %>
 </div>
