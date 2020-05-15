@@ -1,0 +1,7 @@
+<%= render  "shared/top-bar", center:'Saved Posts' %>
+<div class='container'>
+  <h3>You saved <%= @saves.count %> Cranks so far</h3>
+  <% @saves.each do |save| %>
+  <%= render  "shared/post-card", post: save.post %>
+  <% end %>
+</div>

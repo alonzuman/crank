@@ -3,5 +3,5 @@ class Post < ApplicationRecord
   has_one_attached :video
   has_many :likes
   has_many :comments
-  belongs_to :saves
+  has_many :saves
 end

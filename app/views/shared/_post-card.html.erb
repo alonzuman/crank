@@ -11,16 +11,25 @@
   <div class='post-user-info'>
   </div>
   <div class='buttons-bar'>
-    <% if !(post.likes.find {|x| x[:user_id] == current_user.id}).nil? %>
-    <%= link_to '', like_path(post), method: :delete, class:'fas fa-thumbs-up' %>
-    <% else %>
-    <%= link_to '', post_likes_path(post), method: :post, class:'far fa-thumbs-up' %>
-    <% end %>
-    <%= link_to '', new_post_comment_path(post), class:'far fa-comment' %>
 
-    <p>
-      <%= post.likes.count %> likes
-    </p>
+    <% if Save.where(post_id: post, user_id: current_user.id) == [] %>
+    <%= link_to 'Save', save_path(post), method: :post %>
+    <% else %>
+    <%= link_to 'Unsave', delete_saved_post_path(post), method: :delete %>
+    <% end %>
+
+    <div class='like-func d-flex'>
+      <p><%= post.likes.count %></p>
+      <% if !(post.likes.find {|x| x[:user_id] == current_user.id}).nil? %>
+      <%= link_to '', like_path(post), method: :delete, class:'fas fa-thumbs-up ml-2' %>
+      <% else %>
+      <%= link_to '', post_likes_path(post), method: :post, class:'far fa-thumbs-up ml-2' %>
+      <% end %>
+    </div>
+    <div class='d-flex'>
+      <%= post.comments.count %>
+      <%= link_to '', new_post_comment_path(post), class:'far fa-comment ml-2' %>
+    </div>
   </div>
 </div>
 <% end %>
