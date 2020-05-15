@@ -1,0 +1,7 @@
+<%= render  "shared/top-bar", center: 'Add Comment', left:(link_to 'Back', :back) %>
+<div class='container'>
+  <%= simple_form_for [@post, @comment] do |f| %>
+  <%= f.input :content %>
+  <%= f.submit class:'btn btn-primary' %>
+  <% end %>
+</div>

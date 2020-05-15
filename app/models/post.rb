@@ -3,5 +3,6 @@ class Post < ApplicationRecord
   has_one_attached :video
   acts_as_taggable_on :categories
   has_many :likes
-  belongs_to :saves
+  has_many :comments
+  has_many :saves
 end

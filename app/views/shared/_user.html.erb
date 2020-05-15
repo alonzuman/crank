@@ -1,6 +1,6 @@
-<%= render  "shared/top-bar", user: user %>
+<%= render  "shared/top-bar", center: user.username %>
 
-<div class="container text-center">
+<div class="container pr-0 pl-0 text-center">
   <% if user.image.attached? %>
   <%= cl_image_tag(user.image.key, class:'avatar big') %>
   <% else %>
