@@ -13,9 +13,9 @@
   <div class='buttons-bar'>
 
     <% if Save.where(post_id: post, user_id: current_user.id) == [] %>
-    <%= link_to 'Save', save_path(post), method: :post %>
+    <%= link_to '', save_path(post), method: :post, class:'far fa-bookmark' %>
     <% else %>
-    <%= link_to 'Unsave', delete_saved_post_path(post), method: :delete %>
+    <%= link_to '', delete_saved_post_path(post), method: :delete, class:'fas fa-bookmark' %>
     <% end %>
 
     <div class='like-func d-flex'>
