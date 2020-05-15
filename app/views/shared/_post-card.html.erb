@@ -1,12 +1,13 @@
 <div class='post-card'>
+  <% if post.user.image.attached? %>
+  <%= cl_image_tag(post.user.image.key, class:'avatar') %>
+  <% end %>
+  <%= link_to users_path(post.user) do %>
+  <%= post.user.full_name %>
+  <% end %>
+  <p><%= post.description %></p>
   <%= cl_video_tag(post.video.key, height: '100%', controls: true, width: '100%') %>
   <div class='post-user-info'>
-    <%= link_to users_path(post.user) do %>
-    <%= post.user.full_name %>
-    <% end %>
-    <% if post.user.image.attached? %>
-    <%= cl_image_tag(post.user.image.key, class:'avatar') %>
-    <% end %>
   </div>
   <div>
     <p>
