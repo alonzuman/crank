@@ -15,9 +15,9 @@
     </p>
 
     <% if !(post.likes.find {|x| x[:user_id] == current_user.id}).nil? %>
-    <%= link_to 'Unlike', like_path(post), method: :delete %>
+    <%= link_to '', like_path(post), method: :delete, class:'fas fa-thumbs-up' %>
     <% else %>
-    <%= link_to 'Like', post_likes_path(post), method: :post %>
+    <%= link_to '', post_likes_path(post), method: :post, class:'far fa-thumbs-up' %>
     <% end %>
 
   </div>
