@@ -31,7 +31,16 @@ label {
 
 input[type='text'] {
   background-color: transparent !important;
-  border-radius: 4px !important;
+  // border-radius: 4px !important;
+  border: none;
+  border-bottom: 1px solid $gray;
+}
+
+input[type='text']:focus {
+  background-color: transparent !important;
+  // border-radius: 4px !important;
+  border: none;
+  border-bottom: 1px solid $gray;
 }
 
 input[type='file'] {
@@ -90,6 +99,7 @@ p {
 .btn {
   border-radius: 20px !important;
   width: 100%;
+  color: $font-main!important;
   margin-top: 5px;
   max-width: 500px;
   font-size: 14px !important;
@@ -126,13 +136,11 @@ textarea {
   font-size: 18px;
 }
 
-<<<<<<< Updated upstream
-=======
+
 .far {
   font-size: 18px;
 }
 
->>>>>>> Stashed changes
 .fa {
   font-size: 18px;
 }

@@ -1,8 +1,12 @@
 .post-card {
-  margin: 46px 0;
-  padding: 12px;
+  padding: 24px 12px;
   border-top: 1px solid $gray;
 }
 
 .post-user-info {
+}
+
+.buttons-bar {
+  display: flex;
+  justify-content: space-around;
 }

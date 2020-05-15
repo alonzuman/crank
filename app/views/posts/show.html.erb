@@ -1,5 +1,20 @@
-<%= cl_video_tag(@post.video.key, height: '100%', controls: true, width: '100%')%>
-<div class="container">
-<p>post descripiton <%= @post.description %> </p>
+<%= render  "shared/top-bar", left:(link_to 'Back', :back) %>
+
+<div class='container'>
+  <%= cl_video_tag(@post.video.key, height: '100%', controls: true, width: '100%')%>
+  <div class='pl-4 pr-4 pt-2 pb-2'>
+    <p><%= @post.description %> </p>
+  </div>
+  <div class='d-flex justify-content-between'>
+    <h3> Comments </h3>
+    <%= link_to 'Add Comment', new_post_comment_path(@post) %>
+  </div>
+  <% if @post.comments.count > 0 %>
+  <% @post.comments.reverse.each do |comment| %>
+  <%= render  "shared/comment-card", comment: comment %>
+  <% end %>
+  <% else %>
+  <p> There are 0 comments on this crank</p>
+  <% end %>
+
 </div>
-<%# This is the nwe one %>

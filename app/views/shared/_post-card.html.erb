@@ -1,3 +1,4 @@
+<%= link_to post_path(post) do %>
 <div class='post-card'>
   <% if post.user.image.attached? %>
   <%= cl_image_tag(post.user.image.key, class:'avatar') %>
@@ -9,17 +10,17 @@
   <%= cl_video_tag(post.video.key, height: '100%', controls: true, width: '100%') %>
   <div class='post-user-info'>
   </div>
-  <div>
-    <p>
-      Likes
-      <%= post.likes.count %>
-    </p>
-
+  <div class='buttons-bar'>
     <% if !(post.likes.find {|x| x[:user_id] == current_user.id}).nil? %>
-    <%= link_to 'Unlike', like_path(post), method: :delete %>
+    <%= link_to '', like_path(post), method: :delete, class:'fas fa-thumbs-up' %>
     <% else %>
-    <%= link_to 'Like', post_likes_path(post), method: :post %>
+    <%= link_to '', post_likes_path(post), method: :post, class:'far fa-thumbs-up' %>
     <% end %>
+    <%= link_to '', new_post_comment_path(post), class:'far fa-comment' %>
 
+    <p>
+      <%= post.likes.count %> likes
+    </p>
   </div>
 </div>
+<% end %>

@@ -1,0 +1,11 @@
+  <div class='comment-card-container'>
+    <%= link_to users_path(comment.user) do %>
+    <% if comment.user.image.attached? %>
+    <%= cl_image_tag(comment.user.image.key, class:'avatar')%>
+    <% end %>
+    <% end %>
+    <div class='right-section'>
+      <h4><%= comment.user.full_name %></h4>
+      <p><%= comment.content %></p>
+    </div>
+  </div>
