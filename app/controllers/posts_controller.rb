@@ -19,8 +19,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.create(set_params)
     @post.user = current_user
-    @post.save 
-    redirect_to post_path(@post)
+    @post.save ? (redirect_to post_path(@post)) : (render :new);
   end
 
   private
