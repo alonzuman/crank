@@ -1,4 +1,4 @@
-<%= render  "shared/top-bar" %>
+<%= render  "shared/top-bar", center:'Crank' %>
 
 <div class="container">
   <% if @posts.empty? %>
@@ -12,3 +12,5 @@
   <% end %>
   <% end %>
 </div>
+
+<%= render 'shared/navbar' %>

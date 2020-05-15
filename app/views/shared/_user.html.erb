@@ -3,8 +3,6 @@
 <div class="container pr-0 pl-0 text-center">
   <% if user.image.attached? %>
   <%= cl_image_tag(user.image.key, class:'avatar big') %>
-  <% else %>
-  <%= image_tag('default-avatar', class:'avatar big') %>
   <% end %>
   <br>
   <h3><%= user.full_name %></h3>
@@ -53,7 +51,7 @@
   </div>
   <% end %>
   <% if !user.posts.nil? %>
-  <h3>My posts</h3>
+  <h3>Cranks by <%= user.full_name %></h3>
   <div class="posts-grid">
     <% user.posts.reverse.each do |post| %>
     <%= render  "shared/post-thumbnail", post: post %>
@@ -61,3 +59,4 @@
   </div>
   <% end %>
 </div>
+<%= render 'shared/navbar' %>

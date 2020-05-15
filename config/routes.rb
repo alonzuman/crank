@@ -3,12 +3,16 @@ Rails.application.routes.draw do
   root to: 'posts#index'
   get '/me', to: 'users#dashboard', as: 'me'
   resources :posts do
-    resources :likes, only: [:create]
+    # resources :likes, only: [:create]
     resources :comments, only: [:new, :create]
   end
-  # Posts
-  post '/saves/:id', to:'saves#create', as:'save'
-  delete '/saves/:id', to:'saves#destroy', as:'delete_saved_post'
+  
+  post '/posts/:id/like', to:'posts#like', as:'like_post'
+  delete '/posts/:id/like', to:'posts#unlike', as:'unlike_post'
+
+  post '/saves/:id', to:'posts#save', as:'save_post'
+  delete '/saves/:id', to:'posts#unsave', as:'unsave_post'
+  
   get 'me/saved', to:'saves#index', as:'my_saved_posts'
 
   resources :likes, only: [:destroy]

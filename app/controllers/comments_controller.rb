@@ -6,10 +6,11 @@ class CommentsController < ApplicationController
   
   def create
     @comment = Comment.create(set_params)
-    @comment.post = Post.find(params[:post_id])
+    @post = Post.find(params[:post_id])
+    @comment.post = @post
     @comment.user = current_user
     if @comment.save
-      redirect_to posts_path(@post)
+      redirect_to post_path(@post)
     else
       render :new
     end
