@@ -1,0 +1,24 @@
+<div class='post-card'>
+  <%= cl_video_tag(post.video.key, height: '100%', controls: true, width: '100%') %>
+  <div class='post-user-info'>
+    <%= link_to users_path(post.user) do %>
+    <%= post.user.full_name %>
+    <% end %>
+    <% if post.user.image.attached? %>
+    <%= cl_image_tag(post.user.image.key, class:'avatar') %>
+    <% end %>
+  </div>
+  <div>
+    <p>
+      Likes
+      <%= post.likes.count %>
+    </p>
+
+    <% if !(post.likes.find {|x| x[:user_id] == current_user.id}).nil? %>
+    <%= link_to 'Unlike', like_path(post), method: :delete %>
+    <% else %>
+    <%= link_to 'Like', post_likes_path(post), method: :post %>
+    <% end %>
+
+  </div>
+</div>

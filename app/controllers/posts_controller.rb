@@ -1,5 +1,10 @@
 class PostsController < ApplicationController
   def index
+    @users_i_follow = current_user.following_ids
+    @posts = Post.where(user: @users_i_follow)
+  end
+
+  def discover
     @posts = Post.all
   end
 

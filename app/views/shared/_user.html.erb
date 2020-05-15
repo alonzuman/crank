@@ -2,7 +2,9 @@
 
 <div class="container text-center">
   <% if user.image.attached? %>
-    <%= cl_image_tag(user.image.key, class:'avatar big') %>
+  <%= cl_image_tag(user.image.key, class:'avatar big') %>
+  <% else %>
+  <%= image_tag('default-avatar', class:'avatar big') %>
   <% end %>
   <br>
   <h3><%= user.full_name %></h3>
@@ -13,31 +15,48 @@
       <p id='followers-count'><%= user.posts.count %></p>
     </div>
     <div>
+      <% if !@user.followers.nil? %>
+      <%= link_to followers_path(user) do %>
       <p>Followers</p>
       <p id='following-count'><%= user.followers.count %></p>
+      <% end %>
+      <% else %>
+      <p>Followers</p>
+      <p id='following-count'><%= user.followers.count %></p>
+      <% end %>
     </div>
   </div>
 
   <%# Follow / unfollow %>
 
   <% if user == current_user %>
-    <div>
-      <%= link_to 'Edit', edit_user_registration_path, class:'btn btn-secondary small'%>
-    </div>
+  <div>
+    <%= link_to 'Edit', edit_user_registration_path, class:'btn btn-secondary small'%>
+  </div>
   <% else %>
-    <% if @user.followers.include?(current_user) %>
-      <%= link_to "Unfollow", unfollow_path, class:'btn btn-secondary'%> 
-    <% else %>
-      <%= link_to "Follow", follow_path, class:'btn btn-primary' %> 
-    <% end %>
+  <% if @user.followers.include?(current_user) %>
+  <%= link_to "Unfollow", unfollow_path, class:'btn btn-secondary'%>
+  <% else %>
+  <%= link_to "Follow", follow_path, class:'btn btn-primary' %>
+  <% end %>
   <% end %>
 
   <%# My posts grid %>
+  <% if user != current_user %>
+  <h3> My likes </h3>
+  <div class='posts-grid'>
+    <% user.likes.each do |like| %>
+    <%= link_to post_path(like.post) do %>
+    <%= render  "shared/post-thumbnail", post: like.post %>
+    <% end %>
+    <% end %>
+  </div>
+  <% end %>
   <% if !user.posts.nil? %>
   <h3>My posts</h3>
   <div class="posts-grid">
     <% user.posts.reverse.each do |post| %>
-      <%= render  "shared/post-thumbnail", post: post %>
+    <%= render  "shared/post-thumbnail", post: post %>
     <% end %>
   </div>
   <% end %>
