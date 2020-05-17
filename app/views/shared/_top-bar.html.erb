@@ -1,15 +1,15 @@
 <% left = left || ''%>
 <% right = right || ''%>
-<% center = center || 'Crank'%>
+<% center = center || (link_to 'Crank', root_path)%>
 
 <div class="top-bar-container">
   <div class='top-bar-element'>
     <%= left %>
   </div>
-  <div class='top-bar-element'>
+  <div class='top-bar-element center-element'>
     <h3><%= center %></h3>
   </div>
-  <div>
+  <div class='top-bar-element'>
     <%= right %>
   </div>
 </div>

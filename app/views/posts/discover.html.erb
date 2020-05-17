@@ -1,5 +1,5 @@
-<%= render  "shared/top-bar-logo" %>
-<div class='container'>
+<%= render  "shared/top-bar", center:(link_to 'Crank', (discover_path)) %>
+<div class='container pl-0 pr-0'>
   <% @posts.each do |post| %>
   <%= render  "shared/post-card", post: post %>
   <% end %>

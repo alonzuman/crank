@@ -10,6 +10,9 @@ class User < ApplicationRecord
   # LIKES
   has_many :likes, dependent: :destroy
 
+  # COMMENTS
+  has_many :comments
+
   # SAVES
   has_many :saves
 

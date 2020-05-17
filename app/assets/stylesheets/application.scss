@@ -31,7 +31,16 @@ label {
 
 input[type='text'] {
   background-color: transparent !important;
-  border-radius: 4px !important;
+  // border-radius: 4px !important;
+  border: none;
+  border-bottom: 1px solid $gray;
+}
+
+input[type='text']:focus {
+  background-color: transparent !important;
+  // border-radius: 4px !important;
+  border: none;
+  border-bottom: 1px solid $gray;
 }
 
 input[type='file'] {
@@ -90,7 +99,7 @@ p {
 .btn {
   border-radius: 20px !important;
   width: 100%;
-  color: white!important;
+  color: $font-main!important;
   margin-top: 5px;
   max-width: 500px;
   font-size: 14px !important;
@@ -124,7 +133,12 @@ textarea {
 }
 
 .fas {
-  font-size: 22px;
+  font-size: 18px;
+}
+
+
+.far {
+  font-size: 18px;
 }
 
 .far {
@@ -132,5 +146,5 @@ textarea {
 }
 
 .fa {
-  font-size: 22px;
+  font-size: 18px;
 }
