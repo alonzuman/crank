@@ -17,10 +17,10 @@ function getCookie(name) {
   if (parts.length === 2) return parts.pop().split(';').shift();
 }
 
-const toggleButton = document.getElementById('theme-toggle');
+var toggleButton = document.getElementById('theme-toggle');
 
 toggleButton.addEventListener('click', () => {
-  const theme = getCookie('theme')
+  var theme = getCookie('theme')
   if (theme === 'light') {
     setCookie('theme', 'dark', 100);
     location.reload();
