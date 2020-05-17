@@ -6,8 +6,6 @@ puts 'running seed...'
 Post.destroy_all
 User.destroy_all
 
-# a = 'https://res.cloudinary.com/dzbpu5woc/video/upload/v1588924445/5_w8xgdm.mp4'
-
 puts 'Creating users...'
 
 User.create!(email: "bob@bob.bob" , password: '123456', full_name: Faker::Name.name)
