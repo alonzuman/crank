@@ -19,7 +19,7 @@ function getCookie(name) {
 
 var toggleButton = document.getElementById('theme-toggle');
 
-toggleButton.addEventListener('click', () => {
+toggleButton.addEventListener('click', function () {
   var theme = getCookie('theme')
   if (theme === 'light') {
     setCookie('theme', 'dark', 100);
