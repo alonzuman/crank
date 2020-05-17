@@ -9,7 +9,9 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Cloudinary::Api.resources_by_tag('seed')
+
+    # @post = Post.find(params[:id])
   end
   
   def new
