@@ -1,5 +1,4 @@
 <%= render  "shared/top-bar", center:'Crank' %>
-<% @posts = Cloudinary::Api.resources_by_tag(seed) %>
 <div class="container">
   <% @posts.each do |post| %>
   <%= render  "shared/post-card", post: post %>

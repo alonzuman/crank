@@ -6,3 +6,5 @@ class Post < ApplicationRecord
   has_many :comments
   has_many :saves
 end
+
+# How to limit file sizes for videos

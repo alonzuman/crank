@@ -8,14 +8,21 @@
   <title>Crank</title>
   <%= csrf_meta_tags %>
   <%= action_cable_meta_tag %>
+  <% if cookies[:theme] == 'dark' %>
   <%= stylesheet_link_tag 'application', media: 'all' %>
+  <% else %>
+  <%= stylesheet_link_tag 'application-light', media: 'all' %>
+  <% end %>
+  <!-- Toggle between stylesheets (dark/light modes) TODO -->
+  <!-- Cookie => 'mode' = 'light'  -->
+  <!-- if mode === light, display application stylesheet, else  -->
+  <!-- dark stylesheet  -->
 </head>
 
 <body>
   <%= render 'shared/flashes' %>
   <%= yield %>
   <%= javascript_include_tag 'application' %>
-
   <%= javascript_pack_tag 'application' %>
 
 </body>
