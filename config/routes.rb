@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'posts#index'
   get '/me', to: 'users#dashboard', as: 'me'
+  get '/settings', to: 'users#settings', as: 'settings'
   resources :posts do
     # resources :likes, only: [:create]
     resources :comments, only: [:new, :create]

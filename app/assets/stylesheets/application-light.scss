@@ -4,11 +4,11 @@ $blue: #4ecca3;
 $yellow: #ffc65a;
 $orange: #e67e22;
 $green: #1edd88;
-$gray: #3d3b3c;
+$gray: #d4d4d4;
 $light-gray: #f4f4f4;
 $secondary-color: #1c1c1c;
-$dark-background: #f6e8ea;
-$font-main: #fdfffc;
+$dark-background: #fdfffc;
+$font-main: #1c1c1c;
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
@@ -52,7 +52,7 @@ input[type='file']:focus {
 }
 
 a {
-  color: white !important;
+  color: $font-main !important;
   margin-bottom: 5px;
   font-size: 14px;
 }
@@ -94,6 +94,7 @@ p {
   margin-top: 60px;
   margin-bottom: 80px;
   max-width: 500px !important;
+  color: $font-main;
 }
 
 .btn {
@@ -107,6 +108,10 @@ p {
 
 .btn-secondary {
   background-color: transparent !important;
+}
+
+#theme-toggle {
+  color: $light-gray!important;
 }
 
 .centered {
@@ -135,11 +140,16 @@ textarea {
 .fas {
   font-size: 18px;
   margin-top: 2px;
+  color: $font-main!important;
 }
 
+#main-button {
+  color: white!important;
+}
 
 .far {
   font-size: 18px;
+  color: $font-main!important;
 }
 
 .far {

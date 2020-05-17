@@ -29,7 +29,7 @@
 
   <% if user == current_user %>
   <div>
-    <%= link_to 'Edit', edit_user_registration_path, class:'btn btn-secondary small'%>
+    <%= link_to 'Settings', settings_path, class:'btn btn-secondary small'%>
   </div>
   <% else %>
   <% if @user.followers.include?(current_user) %>
