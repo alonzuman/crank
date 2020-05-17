@@ -1,14 +1,14 @@
 <%= render  "shared/top-bar-logo" %>
-
+@posts = Cloudinary::Api.resources_by_tag(seed)
 <div class="container">
-  <% if @posts.empty? %>
+<!--   <% if @posts.empty? %>
   <h2>
     Your feed is empty :(
     Go to the explore section and start following users!
   </h2>
-  <% else %>
+  <% else %> -->
   <% @posts.each do |post| %>
   <%= render  "shared/post-card", post: post %>
   <% end %>
-  <% end %>
+  <!-- <% end %>-->
 </div>
