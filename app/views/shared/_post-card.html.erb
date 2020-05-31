@@ -2,8 +2,6 @@
 <div class='post-card'>
   <% if post.user.image.attached? %>
   <%= cl_image_tag(post.user.image.key, class:'avatar') %>
-  <% else %>
-  <%= image_tag "default-avatar", class:'avatar' %>
   <% end %>
 
   <%= link_to users_path(post.user) do %>
