@@ -2,14 +2,17 @@
 <div class='container' style='text-align: center;'>
   <% if current_user.image.attached? %>
   <%= cl_image_tag(current_user.image.key, class:'avatar big') %>
+  <% else %>
+  <%= image_tag 'default-avatar', class:'avatar big' %>
   <% end %>
   <h3><%= current_user.full_name %></h3>
   <% if cookies[:theme] == 'light' %>
-    <button style='width: 120px;' class='btn btn-dark' id='theme-toggle'>🌚Dark Mode</button>
+  <button style='width: 120px;' class='btn btn-dark' id='theme-toggle'>🌚Dark Mode</button>
   <% else %>
-    <button style='color: black!important; width: 120px;' class='btn btn-light' id='theme-toggle'>🌞Light Mode</button>
+  <button style='color: black!important; width: 120px;' class='btn btn-light' id='theme-toggle'>🌞Light Mode</button>
   <% end %>
-<br>
-<%= link_to 'Edit Profile', edit_user_registration_path, class:'btn btn-secondary small'%>
+
+  <br>
+  <%= link_to 'Edit Profile', edit_user_registration_path, class:'btn btn-secondary small'%>
 </div>
 <%= render  "shared/navbar" %>

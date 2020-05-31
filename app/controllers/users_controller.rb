@@ -6,6 +6,12 @@ class UsersController < ApplicationController
   def settings
   end
 
+  def toggle_theme
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def show
     @user = User.find(params[:id])
   end

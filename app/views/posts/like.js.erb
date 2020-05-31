@@ -1,0 +1,6 @@
+console.log('liking');
+let likeButton = document.querySelector("[likeId='like <%= @post.id %>']");
+let unlikeButton = document.querySelector("[unlikeId='unlike <%= @post.id %>']");
+likeButton.classList.add('hide');
+console.log(unliekButton)
+unlikeButton.classList.remove('hide');
