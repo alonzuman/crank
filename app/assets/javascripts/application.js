@@ -17,13 +17,13 @@
 //   if (parts.length === 2) return parts.pop().split(';').shift();
 // }
 
-var toggleButton = document.getElementById('theme-toggle');
+// var toggleButton = document.getElementById('theme-toggle');
 
-toggleButton.addEventListener('click', () => {
-  console.log('hi')
-  localStorage.setItem('crank-theme', 'dark');
-  const theme = localStorage.getItem('crank-theme');
-})
+// toggleButton.addEventListener('click', () => {
+//   console.log('hi')
+//   localStorage.setItem('crank-theme', 'dark');
+//   const theme = localStorage.getItem('crank-theme');
+// })
 
 // toggleButton.addEventListener('click', function () {
 //   var theme = getCookie('theme')
