@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'posts#index'
+  root to: 'posts#discover'
+  get '/feed', to: 'posts#index', as: 'feed'
   get '/me', to: 'users#dashboard', as: 'me'
   get '/settings', to: 'users#settings', as: 'settings'
   resources :posts do
